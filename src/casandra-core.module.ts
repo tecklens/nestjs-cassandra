@@ -119,6 +119,7 @@ export class CassandraCoreModule implements OnModuleDestroy {
   }
 
   private static async createConnectionFactory(options: CassandraModuleOptions): Promise<Connection> {
+    console.log(options, 'options')
     const { retryAttempts, retryDelay, ...cassandraOptions } = options;
     const connection = new Connection(cassandraOptions);
 

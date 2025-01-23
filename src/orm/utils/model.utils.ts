@@ -5,14 +5,12 @@ import {Connection} from "../../orm";
 export function loadModel(connection: Connection, entity: any): Promise<any> {
   const schema = getSchema(entity);
   const modelName = entity.name || entity.table_name;
-  console.log(modelName, 'modelName')
   console.log(schema, 'schema')
   const model = connection.loadSchema(modelName, schema);
 
   return new Promise((resolve) => {
     model.syncDB((err: Error) => {
       if (err) {
-        console.log('syncDB')
         Logger.error(err.message, err.stack, 'CassandraModule');
         return resolve(model);
       }
