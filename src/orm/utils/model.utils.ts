@@ -12,6 +12,7 @@ export function loadModel(connection: Connection, entity: any): Promise<any> {
   return new Promise((resolve) => {
     model.syncDB((err: Error) => {
       if (err) {
+        console.log('syncDB')
         Logger.error(err.message, err.stack, 'CassandraModule');
         return resolve(model);
       }
