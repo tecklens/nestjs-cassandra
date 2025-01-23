@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BeforeUpdate = void 0;
+exports.BeforeUpdate = BeforeUpdate;
 var orm_constant_1 = require("../../orm.constant");
 var decorator_utils_1 = require("../../utils/decorator.utils");
 function BeforeUpdate() {
@@ -17,5 +17,4 @@ function BeforeUpdate() {
         return descriptor;
     };
 }
-exports.BeforeUpdate = BeforeUpdate;
 //# sourceMappingURL=before-update.decorator.js.map

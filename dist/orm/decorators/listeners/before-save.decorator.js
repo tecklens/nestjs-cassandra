@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BeforeSave = void 0;
+exports.BeforeSave = BeforeSave;
 var orm_constant_1 = require("../../orm.constant");
 var decorator_utils_1 = require("../../utils/decorator.utils");
 function BeforeSave() {
@@ -15,5 +15,4 @@ function BeforeSave() {
         return descriptor;
     };
 }
-exports.BeforeSave = BeforeSave;
 //# sourceMappingURL=before-save.decorator.js.map

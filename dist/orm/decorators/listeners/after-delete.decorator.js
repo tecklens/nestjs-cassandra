@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AfterDelete = void 0;
+exports.AfterDelete = AfterDelete;
 var orm_constant_1 = require("../../orm.constant");
 var decorator_utils_1 = require("../../utils/decorator.utils");
 function AfterDelete() {
@@ -17,5 +17,4 @@ function AfterDelete() {
         return descriptor;
     };
 }
-exports.AfterDelete = AfterDelete;
 //# sourceMappingURL=after-delete.decorator.js.map

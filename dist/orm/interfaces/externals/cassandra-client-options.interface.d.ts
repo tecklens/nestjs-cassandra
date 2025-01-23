@@ -1,5 +1,5 @@
 import { ClientOptions } from 'cassandra-driver';
-export declare type ConnectionOptions = {
+export type ConnectionOptions = {
     name?: string;
 } & ClientOptionsStatic;
 export interface ClientOptionsStatic {

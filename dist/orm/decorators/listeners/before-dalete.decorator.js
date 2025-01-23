@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BeforeDelete = void 0;
+exports.BeforeDelete = BeforeDelete;
 var orm_constant_1 = require("../../orm.constant");
 var decorator_utils_1 = require("../../utils/decorator.utils");
 function BeforeDelete() {
@@ -17,5 +17,4 @@ function BeforeDelete() {
         return descriptor;
     };
 }
-exports.BeforeDelete = BeforeDelete;
 //# sourceMappingURL=before-dalete.decorator.js.map

@@ -1,4 +1,4 @@
-declare type Callback = (error: Error, value?: any) => void;
+type Callback = (error: Error, value?: any) => void;
 export interface BaseModel<T = any> {
     new <R>(value?: Partial<T | R>): BaseModelStatic<T> & T;
     findOne(query: FindQuery<T>, options: {
@@ -88,7 +88,7 @@ export interface FindQueryOptionsStatic<T = any> {
     prepare?: boolean;
     [index: string]: any;
 }
-export declare type FindQuery<T> = {
+export type FindQuery<T> = {
     [P in keyof T]?: T[P] | FindSubQueryStatic;
 } & FindQueryStatic<T>;
 export interface FindQueryStatic<T> {

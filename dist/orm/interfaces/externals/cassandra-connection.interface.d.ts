@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { ConnectionOptions } from './cassandra-client-options.interface';
 import { types } from 'cassandra-driver';
 import { BaseModel } from './cassandra.interface';

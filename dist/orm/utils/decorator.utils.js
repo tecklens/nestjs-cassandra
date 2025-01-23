@@ -11,26 +11,33 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.addHookFunction = exports.addOptions = exports.setOptions = exports.getOptions = exports.addAttributeOptions = exports.addAttribute = exports.setAttributes = exports.getAttributes = exports.getEntityName = exports.setEntityName = exports.getEntity = exports.setEntity = void 0;
+exports.addHookFunction = void 0;
+exports.setEntity = setEntity;
+exports.getEntity = getEntity;
+exports.setEntityName = setEntityName;
+exports.getEntityName = getEntityName;
+exports.getAttributes = getAttributes;
+exports.setAttributes = setAttributes;
+exports.addAttribute = addAttribute;
+exports.addAttributeOptions = addAttributeOptions;
+exports.getOptions = getOptions;
+exports.setOptions = setOptions;
+exports.addOptions = addOptions;
 require("reflect-metadata");
 var orm_constant_1 = require("../orm.constant");
 var deep_merge_utils_1 = require("./deep-merge.utils");
 function setEntity(target, entity) {
     Reflect.defineMetadata(orm_constant_1.ENTITY_METADATA, entity, target);
 }
-exports.setEntity = setEntity;
 function getEntity(target) {
     return Reflect.getMetadata(orm_constant_1.ENTITY_METADATA, target);
 }
-exports.getEntity = getEntity;
 function setEntityName(target, modelName) {
     Reflect.defineMetadata(orm_constant_1.ENTITY_NAME_KEY, modelName, target);
 }
-exports.setEntityName = setEntityName;
 function getEntityName(target) {
     return Reflect.getMetadata(orm_constant_1.ENTITY_NAME_KEY, target);
 }
-exports.getEntityName = getEntityName;
 function getAttributes(target) {
     var attributes = Reflect.getMetadata(orm_constant_1.ATTRUBUTE_KEY, target);
     if (attributes) {
@@ -40,37 +47,31 @@ function getAttributes(target) {
         }, {});
     }
 }
-exports.getAttributes = getAttributes;
 function setAttributes(target, attributes) {
     Reflect.defineMetadata(orm_constant_1.ATTRUBUTE_KEY, __assign({}, attributes), target);
 }
-exports.setAttributes = setAttributes;
 function addAttribute(target, name, options) {
     var attributes = getAttributes(target) || {};
     attributes[name] = __assign({}, options);
     setAttributes(target, attributes);
 }
-exports.addAttribute = addAttribute;
 function addAttributeOptions(target, propertyName, options) {
     var attributes = getAttributes(target);
     attributes[propertyName] = (0, deep_merge_utils_1.mergeDeep)(attributes[propertyName], options);
     setAttributes(target, attributes);
 }
-exports.addAttributeOptions = addAttributeOptions;
 function getOptions(target) {
     var options = Reflect.getMetadata(orm_constant_1.OPTIONS_KEY, target);
+    // @ts-ignore
     return __assign({}, options) || {};
 }
-exports.getOptions = getOptions;
 function setOptions(target, options) {
     Reflect.defineMetadata(orm_constant_1.OPTIONS_KEY, __assign({}, options), target);
 }
-exports.setOptions = setOptions;
 function addOptions(target, options) {
     var mOptions = getOptions(target) || {};
     setOptions(target, (0, deep_merge_utils_1.mergeDeep)(mOptions, options));
 }
-exports.addOptions = addOptions;
 var addHookFunction = function (target, metadataKey) {
     var funcLikeArray = Reflect.getMetadata(metadataKey, target) || [];
     return function () {

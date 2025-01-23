@@ -22,4 +22,4 @@ export declare function getModelToken(entity: any): string;
  */
 export declare function getRepositoryToken(entity: any): string;
 export declare function getConnectionName(options: ConnectionOptions): string;
-export declare const generateString: () => (separator?: string | undefined) => string;
+export declare const generateString: () => (separator?: string) => string;

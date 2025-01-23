@@ -1,7 +1,7 @@
 import { Type } from '@nestjs/common';
 import { ModuleMetadata } from '@nestjs/common/interfaces';
 import { ConnectionOptions } from '../orm';
-export declare type CassandraModuleOptions = {
+export type CassandraModuleOptions = {
     retryAttempts?: number;
     retryDelay?: number;
     keepConnectionAlive?: boolean;

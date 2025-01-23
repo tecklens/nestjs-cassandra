@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AfterSave = void 0;
+exports.AfterSave = AfterSave;
 var orm_constant_1 = require("../../orm.constant");
 var decorator_utils_1 = require("../../utils/decorator.utils");
 function AfterSave() {
@@ -15,5 +15,4 @@ function AfterSave() {
         return descriptor;
     };
 }
-exports.AfterSave = AfterSave;
 //# sourceMappingURL=after-save.decorator.js.map

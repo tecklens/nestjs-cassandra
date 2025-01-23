@@ -9,7 +9,12 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateString = exports.getConnectionName = exports.getRepositoryToken = exports.getModelToken = exports.getConnectionToken = exports.handleRetry = void 0;
+exports.generateString = void 0;
+exports.handleRetry = handleRetry;
+exports.getConnectionToken = getConnectionToken;
+exports.getModelToken = getModelToken;
+exports.getRepositoryToken = getRepositoryToken;
+exports.getConnectionName = getConnectionName;
 var operators_1 = require("rxjs/operators");
 var common_1 = require("@nestjs/common");
 var orm_1 = require("../orm");
@@ -28,7 +33,6 @@ function handleRetry(retryAttempts, retryDelay) {
         }));
     };
 }
-exports.handleRetry = handleRetry;
 /**
  * This function returns a Connection injection token for given Connection, ConnectionOptions or connection name.
  * @param {(Connection | ConnectionOptions | string)} [connection='default'] This optional parameter is either
@@ -50,7 +54,6 @@ function getConnectionToken(connection) {
         return "".concat(connection.name, "Connection");
     }
 }
-exports.getConnectionToken = getConnectionToken;
 /**
  * This function returns a Cassandra model token for given entity.
  * @param {Function} entity This parameter is an Entity class.
@@ -59,7 +62,6 @@ exports.getConnectionToken = getConnectionToken;
 function getModelToken(entity) {
     return "".concat(entity.name, "Model");
 }
-exports.getModelToken = getModelToken;
 /**
  * This function returns a Repository injection token for given entity.
  * @param {Function} entity This options is either an Entity class or Repository.
@@ -71,11 +73,9 @@ function getRepositoryToken(entity) {
     }
     return "".concat(entity.name, "Repository");
 }
-exports.getRepositoryToken = getRepositoryToken;
 function getConnectionName(options) {
     return options && options.name ? options.name : 'default';
 }
-exports.getConnectionName = getConnectionName;
 var generateString = function () {
     // tslint:disable-next-line:no-bitwise
     return __spreadArray([], Array(10), true).map(function (i) { return ((Math.random() * 36) | 0).toString(36); }).join;

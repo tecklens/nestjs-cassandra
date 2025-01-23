@@ -27,5 +27,5 @@ var DataType;
     DataType["Time"] = "time";
     DataType["Tuple"] = "tuple";
     DataType["Blob"] = "blob";
-})(DataType = exports.DataType || (exports.DataType = {}));
+})(DataType || (exports.DataType = DataType = {}));
 //# sourceMappingURL=data.type.js.map

@@ -59,7 +59,8 @@ export function addAttributeOptions(
 }
 
 export function getOptions(target: any): any | undefined {
-  const options = Reflect.getMetadata(OPTIONS_KEY, target);
+  const options: any = Reflect.getMetadata(OPTIONS_KEY, target);
+  // @ts-ignore
   return { ...options } || {};
 }
 

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityMethod = void 0;
+exports.EntityMethod = EntityMethod;
 var decorator_utils_1 = require("../utils/decorator.utils");
 function EntityMethod() {
     return function (target, propertyKey, descriptor) {
@@ -11,5 +11,4 @@ function EntityMethod() {
         return descriptor;
     };
 }
-exports.EntityMethod = EntityMethod;
 //# sourceMappingURL=entity-method.decorator.js.map

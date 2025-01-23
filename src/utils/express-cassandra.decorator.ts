@@ -6,6 +6,7 @@ export const InjectConnection: (connection?: Connection | ConnectionOptions | st
   connection?: Connection | ConnectionOptions | string,
 ) => Inject(getConnectionToken(connection));
 
-export const InjectModel = (entity: any) => Inject(getModelToken(entity));
+export const InjectModel: (entity: any) => PropertyDecorator & ParameterDecorator = (entity: any) => Inject(getModelToken(entity));
 
-export const InjectRepository = (entity: any) => Inject(getRepositoryToken(entity));
+export const InjectRepository: (entity: any) => PropertyDecorator & ParameterDecorator = (entity: any) =>
+  Inject(getRepositoryToken(entity));
