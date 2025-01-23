@@ -5,7 +5,6 @@ import {Connection} from "../../orm";
 export function loadModel(connection: Connection, entity: any): Promise<any> {
   const schema = getSchema(entity);
   const modelName = entity.name || entity.table_name;
-  console.log(schema, 'schema')
   const model = connection.loadSchema(modelName, schema);
 
   return new Promise((resolve) => {
