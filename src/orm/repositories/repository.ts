@@ -92,6 +92,7 @@ export class Repository<Entity = any> {
   ): Observable<Entity> | Observable<Entity[]> {
     const saveFunc = async (entity: Entity | Partial<unknown> | undefined) => {
       const model = new this.model(entity);
+      console.log(model)
       await model.saveAsync(options);
       return transformEntity(this.target, model.toJSON());
     };
